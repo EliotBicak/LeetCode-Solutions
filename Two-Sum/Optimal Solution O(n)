@@ -1,0 +1,18 @@
+O(n) Solution:
+
+class Solution: 
+    def twoSum(self, nums: list[int], target: int):
+        complementMap = {}
+        for i in range(len(nums)):
+            num = nums[i]
+            complement = target - num
+            if num in complementMap:
+                return [complementMap[num], i]
+            else:
+                complementMap[complement] = i
+
+solution = Solution()
+
+result = solution.twoSum([1, 4, 7, 9, 12, 14, 3, 2, 5, 8, 12, 16, 15, 19, 25], 32)
+
+print(result)
