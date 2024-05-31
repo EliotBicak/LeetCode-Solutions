@@ -1,0 +1,27 @@
+Given an integer (x), return True if (x) is a palindrome, and False otherwise
+
+
+class Solution:
+    def isPalindrome(self, x: int):
+        #if input is (-x) return False
+        if x < 0: return False
+
+        div = 1
+        while x >= 10 * div:
+            div *= 10
+
+        while x:
+            right = x % 10
+            left = x // div
+
+            if left != right: return False
+
+            x = (x % div) // 10
+            div = div / 100
+        return True
+    
+solution = Solution()
+
+result = solution.isPalindrome(1234450544321)
+
+print(result)
