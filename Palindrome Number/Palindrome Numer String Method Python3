@@ -1,0 +1,10 @@
+class Solution:
+    def isPalindrome(self, x: int):
+        x = str(x)
+        return x == x[::-1]
+    
+solution = Solution()
+
+result = solution.isPalindrome(21355939041841029841290840)
+
+print(result)
