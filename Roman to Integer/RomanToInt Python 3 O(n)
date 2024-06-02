@@ -1,0 +1,25 @@
+Problem: Given a roman numeral, convert it to an integer and return that value.
+
+class Solution:
+    def romanToInt(self, s: str):
+        
+        #Create a hash map to store the roman numerals and their assigned values
+        roman = {"I" : 1, "V" : 5, "X" : 10, "L" : 50, "C" : 100, "D" : 500, "M" : 1000}
+
+        #Initialize result variable that will be updated as roman numerals are converted
+        result = 0
+
+        #Iterate through (s) or the string
+        for i in range(len(s)):
+            #Checks to see if i is at the end of the string and if i is currently smaller than the next value
+            if i + 1 < len(s) and roman[s[i]] < roman[s[i + 1]]:
+                result -= roman[s[i]]
+            else:
+                result += roman[s[i]]
+        return result
+    
+solution = Solution()
+
+result = solution.romanToInt("DCCCLXVI")
+
+print(result)
