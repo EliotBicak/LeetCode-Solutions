@@ -1,0 +1,11 @@
+class Solution: 
+    def runningSum(self, nums: list[int]):
+        for i in range(1, len(nums)):
+            nums[i] += nums[i - 1]
+        return nums
+    
+solution = Solution()
+
+nums = [1, 4, 8, 12, 24, 33, 43, 69]
+
+print(solution.runningSum(nums))
