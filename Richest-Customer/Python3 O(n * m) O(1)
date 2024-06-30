@@ -1,0 +1,17 @@
+class Solution:
+    def maximumWealth(self, accounts) -> int:
+        currentMaxWealth = 0
+
+        for account in accounts:
+            currentWealth = sum(account)
+            currentMaxWealth = max(currentMaxWealth, currentWealth)
+
+        return currentMaxWealth
+    
+accounts = [[1, 5, 4, 7], [9, 1, 1], [1, 7, 9, 12], [7, 9, 14, 23, 56]]
+
+solution = Solution()
+
+max_wealth = solution.maximumWealth
+
+print(max_wealth(accounts))
